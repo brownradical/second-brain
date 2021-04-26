@@ -5,7 +5,7 @@ $(function () {});
 
   $("#currentDay").text(today);
 
-  
+
   /* HOURS OF THE DAY*/
   var planDay = [
     { time: "9AM", action: "" },
@@ -53,3 +53,22 @@ $(function () {});
 		  return "present";
 	  }
   }
+
+
+  /* SAVING + STORAGE */
+  $(".saveBtn").on("click", function() {
+      var blockID = parseInt(
+        $(this)
+        .closest(".time-block")
+        .attr("id")
+      );
+      var userEntry = $.trim(
+        $(this)
+        .parent()
+        .siblings("textarea")
+        .val()
+      );
+
+      planDay [blockID].event = userEntry
+  });
+
