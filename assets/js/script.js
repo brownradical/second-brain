@@ -71,5 +71,5 @@ $(".saveBtn").on("click", function() {
 
     planDay[blockID].action = userEntry;
       
-     localStorage.setItem("Day", JSON.stringify(planDay));
+    window.localStorage.setItem("Day", JSON.stringify(planDay));
 });
