@@ -33,7 +33,7 @@ $(function () {});
       '</div><textarea class="form-control ' +
       blockColor +
       '">' +
-		  timeBlock.event +
+		  timeBlock.action +
 		  '</textarea><div class="col-sm col-lg-1 input-group-append"><button class="saveBtn btn-block" type="submit"><i class="fas fa-save"></i></button></div></div></div>';
 
       $(".container").append(row);
@@ -69,12 +69,12 @@ $(function () {});
           .val()
       );
 
-      planDay[blockID].event = userEntry;
+      planDay[blockID].action = userEntry;
       
       localStorage.setItem("Day", JSON.stringify(planDay));
   });
 
-    var workEvents = JSON.parse(localStorage.getItem("Day"));
-    if (workEvents) {
-      planDay = workEvents;
+    var workActions = JSON.parse(localStorage.getItem("Day"));
+    if (workActions) {
+      planDay = workActions;
    }
