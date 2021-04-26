@@ -26,7 +26,7 @@ $(function () {});
     var timeLabel = timeBlock.time;
     var blockColor = colorRow(timeLabel);
     var row =
-      '<div class "time-block" id="' +
+      '<div class="time-block" id="' +
       index +
       '"><div class="row no-gutters input-group"><div class="col-sm col-lg-1 input-group-prepend hour justify-content-sm-end pr-3 pt-3">' +
       timeLabel +
@@ -59,18 +59,22 @@ $(function () {});
   $(".saveBtn").on("click", function() {
       var blockID = parseInt(
         $(this)
-        .closest(".time-block")
-        .attr("id")
+          .closest(".time-block")
+          .attr("id")
       );
       var userEntry = $.trim(
         $(this)
-        .parent()
-        .siblings("textarea")
-        .val()
+          .parent()
+          .siblings("textarea")
+          .val()
       );
 
-      planDay [blockID].event = userEntry
+      planDay[blockID].event = userEntry;
       
-      localStorage.setItem("workDay", JSON.stringify(planDay));
+      localStorage.setItem("Day", JSON.stringify(planDay));
   });
 
+    var workEvents = JSON.parse(localStorage.getItem("Day"));
+    if (workEvents) {
+      planDay = workEvents;
+   }
