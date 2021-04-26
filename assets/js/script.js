@@ -1,7 +1,9 @@
 $(function () {});
 
-  var today = moment().format("dddd, MMM Do");
+  var today = moment().format("dddd, MMMM Do");
   var hour = moment().format("HA");
+
+  $("#currentDay").text(today);
 
   var planDay = [
     { time: "9AM", action: "" },
@@ -14,3 +16,4 @@ $(function () {});
     { time: "4PM", action: "" },
     { time: "5PMM", action: "" },
   ];
+
