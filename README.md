@@ -42,7 +42,7 @@ Project is created with:
 
 ## Screenshots 
 The following screenshots are what the website currently looks like :camera_flash: :
-![screenshot of Second Brain website](./develop/assets/screenshot.png)
+![screenshot of Second Brain website](./assets/screenshot.png)
 
 	
 ## View updates
