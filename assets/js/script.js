@@ -5,6 +5,8 @@ $(function () {});
 
   $("#currentDay").text(today);
 
+  
+  /* HOURS OF THE DAY*/
   var planDay = [
     { time: "9AM", action: "" },
     { time: "10AM", action: "" },
@@ -14,12 +16,15 @@ $(function () {});
     { time: "2PM", action: "" },
     { time: "3PM", action: "" },
     { time: "4PM", action: "" },
-    { time: "5PMM", action: "" },
+    { time: "5PM", action: "" },
   ];
 
+
+  /* ROW CREATION */
   planDay.forEach(function(timeBlock,index) {
+
     var timeLabel = timeBlock.time;
-    var blockColor = //color function (timeLabel);
+    var blockColor = colorRow(timeLabel);
     var row =
       '<div class "time-block" id="' +
       index +
@@ -33,3 +38,18 @@ $(function () {});
 
       $(".container").append(row);
   });
+
+
+  /* ROW COLORS */
+  function colorRow(time) {
+
+    var planHour = moment(hour, "HA");
+	  var planEntry = moment(time, "HA");
+	  if (planHour.isBefore(planEntry) === true) {
+		  return "future";
+	  } else if (planHour.isAfter(planEntry) === true) {
+		  return "past";
+	  } else {
+		  return "present";
+	  }
+  }
