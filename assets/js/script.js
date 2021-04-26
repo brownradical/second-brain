@@ -70,5 +70,7 @@ $(function () {});
       );
 
       planDay [blockID].event = userEntry
+      
+      localStorage.setItem("workDay", JSON.stringify(planDay));
   });
 
